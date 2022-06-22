@@ -31,12 +31,21 @@ public class Router {
 
     // jeden człowiek
 
-    @GetMapping("/persons/{id}")
+    @GetMapping("/persons/{id}") // find by id
     Person one(@PathVariable Long id) {
 
         return repository.findById(id)
                 .orElseThrow(() -> new PersonNotFoundException(id));
     }
+
+    @GetMapping("/personsfinder/{surname}") //find by surname
+    Person one(@PathVariable String surname) {
+
+        return repository.findBySurname(surname)
+                .orElseThrow(() -> new PersonNotFoundException(surname));
+    }
+
+
 
     @PutMapping("/persons/{id}")
     Person replaceEmployee(@RequestBody Person newPerson, @PathVariable Long id) {
