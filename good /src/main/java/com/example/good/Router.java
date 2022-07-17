@@ -29,7 +29,7 @@ public class Router {
         return repository.save(newPerson);
     }
 
-    // jeden człowiek
+    // jeden człowiek/one person
 
     @GetMapping("/persons/{id}") // find by id
     Person one(@PathVariable Long id) {

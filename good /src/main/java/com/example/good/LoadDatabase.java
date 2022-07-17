@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 class LoadDatabase {
 
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+    //adding persons to my DB
 
     @Bean
     CommandLineRunner initDatabase(PersonRepository repository) {
